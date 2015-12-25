@@ -1,0 +1,22 @@
+<ion-view view-title="Home">
+  <ion-content>
+  	<div ng-if="!home.locationLoaded">
+  		<ion-spinner
+  			class="spinner-energized" 
+  			icon="spiral">
+  		</ion-spinner>
+  	</div>
+  	<div ng-if="home.locationLoaded">
+	    <ion-header-bar class="top">
+	      <h1 class="title">Rooms</h1>
+	      <button class="button button-icon ion-plus" ng-click="home.addRoom()">
+	      </button>
+	    </ion-header-bar>
+	    <ion-list>
+		    <ion-item ng-repeat="room in home.rooms">
+		      {{room.name}}
+		    </ion-item>
+		  </ion-list>
+		</div>
+  </ion-content>
+</ion-view>
